@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
 using SpaApp.Models;
 
 namespace SpaApp.Controllers
@@ -27,6 +28,12 @@ namespace SpaApp.Controllers
                 TabNavs = MockData.GetTabNavs().ToArray()
             };
             return result;
+        }
+
+        [HttpPost("/spa/postForm")]
+        public bool PostForm(SpaRequestData request)
+        {
+            return true;
         }
     }
 }
